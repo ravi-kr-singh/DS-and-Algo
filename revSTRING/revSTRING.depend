@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1514452946 source:c:\users\ravidon\desktop\c++prog\revstring\main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+
