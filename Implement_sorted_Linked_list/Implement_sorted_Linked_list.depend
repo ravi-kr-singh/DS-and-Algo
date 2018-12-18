@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1539004506 source:c:\users\ravi\desktop\ds_pracs_college\implement_sorted_linked_list\main.cpp
+	<iostream>
+	<iomanip>
+	<stdlib.h>
+
