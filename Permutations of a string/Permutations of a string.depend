@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1536199796 source:c:\users\ravi\desktop\ds_codes\permutations of a string\main.cpp
+	<iostream>
+	<string>
+	<vector>
+

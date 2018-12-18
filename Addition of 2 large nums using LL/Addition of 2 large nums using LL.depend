@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1537529500 source:c:\users\ravi\desktop\ds_codes\addition of 2 large nums using ll\main.cpp
+	<iostream>
+	<stdio.h>
+	<math.h>
+
