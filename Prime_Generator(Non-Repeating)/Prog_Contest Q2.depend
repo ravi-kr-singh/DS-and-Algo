@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1535945284 source:c:\users\ravi\desktop\ds_codes\prog_contest q2\main.cpp
+	<iostream>
+	<cmath>
+	<vector>
+
