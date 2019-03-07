@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1538923331 source:c:\users\ravi\desktop\ds_pracs_college\implement_2_stacks_in_an_array\main.cpp
-	<iostream>
-	<iomanip>
-	<string>
-	<stdlib.h>
-
