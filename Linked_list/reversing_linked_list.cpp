@@ -40,6 +40,19 @@ node* reverse_list(node* head){
   return head;
 }
 
+//Recursive approach
+node* start=NULL;
+void reverse_recursive(node* head){
+  if(head->link==NULL){
+    start=head;
+  }
+  else{
+    reverse_recursive(head->link);
+    head->link->link=head;
+    head->link=NULL;
+  }
+}
+
 int main() {
   node* HEAD=NULL;
   insert_data(HEAD,44);
@@ -53,5 +66,8 @@ int main() {
   HEAD=reverse_list(HEAD);
   cout<<"\nAfter reversing, Linked list : ";
   show_data(HEAD);
+  reverse_recursive(HEAD);
+  cout<<"\nAfter reversing again using recursion, Linked list : ";
+  show_data(start);
   return 0;
 }
