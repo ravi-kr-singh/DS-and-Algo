@@ -28,9 +28,7 @@ void show_data(node* head) {
 }
 
 node* reverse_list(node* head){
-  node* prev=NULL;
-  node* curr=head;
-  node* next=head->link;
+  node *prev=NULL,*curr=head,*next=head->link;
   while (curr!=NULL) {
     curr->link=prev;
     prev=curr;
