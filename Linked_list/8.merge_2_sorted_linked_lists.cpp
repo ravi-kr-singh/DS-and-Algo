@@ -38,33 +38,34 @@
    node* merge_lists(node* h1,node* h2){
      node* new_list=NULL;
      node* t=new_list;
-     if(h1->data<=h2->data){
-       new_list=h1;
-       t=new_list;
-       h1=h1->link;
-     }
-     else{
-       new_list=h2;
-       t=new_list;
-       h2=h2->link;
-     }
-
      while(h1!=NULL && h2!=NULL){
        if(h1->data<=h2->data){
          node* new_node=new node(h1->data);
-         t->link=new_node;
+         if(t==NULL){
+           new_list=new_node;
+           t=new_list;
+         }
+         else{
+           t->link=new_node;
+           t=t->link;
+         }
          h1=h1->link;
        }
        else{
          node* new_node=new node(h2->data);
-         t->link=new_node;
+         if(t==NULL){
+           new_list=new_node;
+           t=new_list;
+         }
+         else{
+           t->link=new_node;
+           t=t->link;
+         }
          h2=h2->link;
        }
-       t=t->link;
      }
-     if(h1==NULL && h2!=NULL){
+     if(h1==NULL && h2!=NULL)
        t->link=h2;
-     }
      else
       t->link=h1;
     return new_list;
@@ -76,6 +77,9 @@
      insert_data(HEAD1,15);
      insert_data(HEAD1,23);
      insert_data(HEAD1,19);
+     insert_data(HEAD1,56);
+     insert_data(HEAD1,6);
+     insert_data(HEAD1,136);
      insert_data(HEAD1,43);
      insert_data(HEAD1,18);
      cout<<"Linked list 1: ";
@@ -85,7 +89,7 @@
      insert_data(HEAD2,61);
      insert_data(HEAD2,23);
      insert_data(HEAD2,10);
-    // insert_data(HEAD2,101);
+     insert_data(HEAD2,101);
      insert_data(HEAD2,55);
      cout<<"\nLinked list 2: ";
      show_data(HEAD2);
