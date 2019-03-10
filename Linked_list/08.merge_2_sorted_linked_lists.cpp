@@ -76,9 +76,8 @@
      insert_data(HEAD1,44);
      insert_data(HEAD1,15);
      insert_data(HEAD1,23);
-     insert_data(HEAD1,19);
-     insert_data(HEAD1,56);
-     insert_data(HEAD1,6);
+     insert_data(HEAD1,9);
+     insert_data(HEAD1,87);
      insert_data(HEAD1,136);
      insert_data(HEAD1,43);
      insert_data(HEAD1,18);
