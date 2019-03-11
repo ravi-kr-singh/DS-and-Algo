@@ -31,6 +31,20 @@
    }
  }
 
+ void odd_even_list(node*& HEAD){
+   node* odd=HEAD;
+   node* even=NULL;
+   if(HEAD!=NULL){
+     even=HEAD->link;
+   }
+   while(odd!=NULL and even!=NULL){
+    if(odd->link!=NULL)
+      odd->link=odd->link->link;
+    if(even->link!=NULL)
+      even->link=even->link->link;
+   }
+ }
+
  int main() {
    node* HEAD=NULL;
    insert_data(HEAD,1);
