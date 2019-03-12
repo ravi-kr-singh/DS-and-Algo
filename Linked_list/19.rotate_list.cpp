@@ -43,12 +43,13 @@ int list_size(node* h){
 node* rotate_list(node* head,int k){
     node* temp=head;
     int size=list_size(head);
-    k=k%size;
+    if(size!=0)
+      k=k%size;
     if(k==0){
       return  head;
     }
     int m=size-k;
-    if(m==0)
+    if(m<=0)
       return head;
     while(m-1!=0){
       head=head->link;
