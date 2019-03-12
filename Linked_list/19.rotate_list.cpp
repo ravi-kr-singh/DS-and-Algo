@@ -33,17 +33,7 @@ void show_data(node* head) {
 
 
 node* rotate_list(node* head,int k){
-  int n=0;
-  node* t=head;
-  while(t!=NULL){
-    n++;
-    if(t->link!=NULL)
-      t=t->link;
-    else
-      break;
-  }
-  t->link=head;
-  
+    while()
 }
 
 int main() {
