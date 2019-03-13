@@ -33,8 +33,32 @@ You may not modify the values in the list's nodes, only nodes itself
    }
  }
 
+int list_size(node* head){
+  int n=0;
+  while(head!=NULL){
+    n++;
+    head=head->link;
+  }
+  return head;
+}
+
+node* reverse(node* h){
+  
+}
+
  node* reorder_list(node* head){
-   
+   int n=list_size(head);
+   if(n%2==0){
+     n=(n/2)-1;
+   else
+    n=n/2;
+   node* temp=head;
+   while(n!=0){
+     temp=temp->link;
+   }
+   node* second_half=temp->link;
+   temp->link=NULL;
+   second_half=reverse(second_half);
  }
 
  int main() {
