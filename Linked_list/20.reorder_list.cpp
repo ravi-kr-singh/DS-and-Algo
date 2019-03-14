@@ -43,7 +43,19 @@ int list_size(node* head){
 }
 
 node* reverse(node* h){
-  
+  node *curr=h,*prev=NULL;
+  node* next_node;
+  if(h!=NULL)
+    next_node=h->link;
+  while(curr!=NULL){
+    curr->link=prev;
+    prev=curr;
+    curr=next_node;
+    if(curr!=NULL)
+      next_node=next_node->link;
+  }
+  h=prev;
+  return h;
 }
 
  node* reorder_list(node* head){
@@ -59,6 +71,17 @@ node* reverse(node* h){
    node* second_half=temp->link;
    temp->link=NULL;
    second_half=reverse(second_half);
+   temp=head;
+   node* ahead=NULL;
+   if(head!=NULL)
+    ahead=temp->link;
+   while(second_half!=NULL){
+     temp->link=second_half;
+     temp=ahead;
+     if(ahead!=NULL)
+      ahead=ahead->link;
+     second_half=second_half->link;
+   }
  }
 
  int main() {

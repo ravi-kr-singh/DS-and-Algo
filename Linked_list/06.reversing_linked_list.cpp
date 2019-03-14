@@ -28,7 +28,10 @@ void show_data(node* head) {
 }
 //Iterative approach
 node* reverse_list(node* head){
-  node *prev=NULL,*curr=head,*next=head->link;
+  node *prev=NULL,*curr=head;
+  node* next;
+  if(head!=NULL)
+    next=head->link;
   while (curr!=NULL) {
     curr->link=prev;
     prev=curr;
