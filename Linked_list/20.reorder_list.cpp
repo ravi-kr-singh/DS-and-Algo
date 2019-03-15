@@ -39,7 +39,7 @@ int list_size(node* head){
     n++;
     head=head->link;
   }
-  return head;
+  return n;
 }
 
 node* reverse(node* h){
@@ -59,39 +59,43 @@ node* reverse(node* h){
 }
 
  node* reorder_list(node* head){
-   int n=list_size(head);
-   if(n%2==0){
-     n=(n/2)-1;
-   else
-    n=n/2;
+   if(head==NULL)
+    return head;
+   int n=(list_size(head)/2)-1;
    node* temp=head;
    while(n!=0){
      temp=temp->link;
+     n--;
    }
    node* second_half=temp->link;
    temp->link=NULL;
    second_half=reverse(second_half);
    temp=head;
-   node* ahead=NULL;
-   if(head!=NULL)
-    ahead=temp->link;
-   while(second_half!=NULL){
+   node* ahead_1=temp->link;
+   node* ahead_2=second_half->link;
+   while(temp!=NULL){
      temp->link=second_half;
-     temp=ahead;
-     if(ahead!=NULL)
-      ahead=ahead->link;
-     second_half=second_half->link;
+     if(ahead_1!=NULL)
+      second_half->link=ahead_1;
+     temp=ahead_1;
+     second_half=ahead_2;
+     if(temp!=NULL)
+      ahead_1=ahead_1->link;
+     if(second_half!=NULL)
+      ahead_2=ahead_2->link;
    }
+   return head;
  }
 
  int main() {
    node* HEAD=NULL;
-   insert_data(HEAD,44);
-   insert_data(HEAD,15);
-   insert_data(HEAD,23);
-   insert_data(HEAD,19);
-   insert_data(HEAD,43);
-   insert_data(HEAD,18);
+   insert_data(HEAD,1);
+   insert_data(HEAD,2);
+   insert_data(HEAD,3);
+   insert_data(HEAD,4);
+   insert_data(HEAD,5);
+   insert_data(HEAD,6);
+   insert_data(HEAD,7);
    cout<<"Linked list : ";
    show_data(HEAD);
    HEAD=reorder_list(HEAD);
