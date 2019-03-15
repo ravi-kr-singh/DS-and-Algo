@@ -62,6 +62,8 @@ node* reverse(node* h){
    if(head==NULL)
     return head;
    int n=(list_size(head)/2)-1;
+   if(n<1)
+    return head;
    node* temp=head;
    while(n!=0){
      temp=temp->link;
