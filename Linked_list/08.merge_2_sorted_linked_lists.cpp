@@ -36,38 +36,38 @@
    }
 
    node* merge_lists(node* h1,node* h2){
-     node* new_list=NULL;
-     node* t=new_list;
-     while(h1!=NULL && h2!=NULL){
-       if(h1->data<=h2->data){
-         node* new_node=new node(h1->data);
-         if(t==NULL){
-           new_list=new_node;
-           t=new_list;
-         }
-         else{
-           t->link=new_node;
-           t=t->link;
-         }
-         h1=h1->link;
-       }
-       else{
-         node* new_node=new node(h2->data);
-         if(t==NULL){
-           new_list=new_node;
-           t=new_list;
-         }
-         else{
-           t->link=new_node;
-           t=t->link;
-         }
-         h2=h2->link;
-       }
-     }
-     if(h1==NULL && h2!=NULL)
-       t->link=h2;
-     else
-      t->link=h1;
+    if(h1==NULL)
+      return h2;
+    if(h2==NULL)
+      return h1;
+    node* new_list=NULL;
+    if(h1->data<=h2->data){
+      new_list=h1;
+      h1=h1->link;
+    }
+    else{
+     new_list=h2;
+     h2=h2->link;
+   }
+    node* temp=new_list;
+    while(h1!=NULL && h2!=NULL){
+      if(h1->data<=h2->data){
+        temp->link=h1;
+        temp=temp->link;
+        h1=h1->link;
+      }
+      else{
+        temp->link=h2;
+        temp=temp->link;
+        h2=h2->link;
+      }
+    }
+    if(h1!=NULL){
+      temp->link=h1;
+    }
+    if(h2!=NULL){
+      temp->link=h2;
+    }
     return new_list;
    }
 
