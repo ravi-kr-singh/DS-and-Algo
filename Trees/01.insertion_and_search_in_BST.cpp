@@ -23,15 +23,14 @@ t_node* insert_data(t_node* root,int item){
 }
 
 bool search_data(t_node* root,int item){
-  if(root!=NULL){
-    if(root->data==item)
-      return true;
-    else if(item<root->data)
-      return search_data(root->left,item);
-    else
-     return search_data(root->right,item);
-  }
-  return false;
+  if(root==NULL)
+    return false;
+  else if(root->data==item)
+    return true;
+  else if(item<root->data)
+    return search_data(root->left,item);
+  else
+    return search_data(root->right,item);
 }
 
 int main() {
