@@ -9,6 +9,7 @@ struct node {
     link=NULL;
   }
 };
+
 void insert_data(node* &head, int item) {
   if(head==NULL)
     head=new node(item);
