@@ -30,6 +30,16 @@ void inorder_traversal(t_node* root){
   }
 }
 
+t_node* deletion(t_node* root,int item){
+  if(root==NULL){
+    cout<<"\nGiven node not found on tree:(";
+    return root;
+  }
+  else if(root->data==item){
+    
+  }
+}
+
 
 
 
@@ -47,5 +57,5 @@ int main() {
   ROOT=insert_data(ROOT,18);
   cout<<"\nInorder traversal : ";
   inorder_traversal(ROOT);
-  
+
 }
